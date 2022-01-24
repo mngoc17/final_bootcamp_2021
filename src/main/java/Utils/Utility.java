@@ -20,7 +20,6 @@ public class Utility {
             while ((line = br.readLine()) != null) {
                 arrayList.add(line);
             }
-            arrayList.remove(0);
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
