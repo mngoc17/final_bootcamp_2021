@@ -16,7 +16,7 @@ public class Data {
      * @return
      */
     public static CheckoutInfo defaultInfo() {
-        return new CheckoutInfo(Constants.FIRSTNAME,Constants.LASTNAME,Constants.ZIPCODE);
+        return new CheckoutInfo(Constants.FIRSTNAME, Constants.LASTNAME, Constants.ZIPCODE);
     }
 
     public static ArrayList<Account> getAccountsCSV(String file, String delimiter) {
