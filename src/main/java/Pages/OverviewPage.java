@@ -1,6 +1,6 @@
 package Pages;
 
-import org.openqa.selenium.By;
+import Objects.ProductInfo;
 import org.openqa.selenium.WebDriver;
 
 public class OverviewPage extends BasePage{
@@ -11,10 +11,18 @@ public class OverviewPage extends BasePage{
 
     /**
      * Get product information in the Overview page
-     * @param by
+     * @param productInfo
      * @return
      */
-    public String GetProductInfo(By by) {
-        return getText(by);
+    public String GetProductInfo(ProductInfo productInfo) {
+        String quantity = getText(productInfo.getQuantity());
+        String name = getText(productInfo.getName());
+        String desc = getText(productInfo.getDescription());
+        String price = getText(productInfo.getPrice());
+        return "Product 1: " +
+                "Quantity: " + quantity +
+                ", Name: " + name +
+                ", Description: " + desc +
+                ", Price: " + price;
     }
 }
