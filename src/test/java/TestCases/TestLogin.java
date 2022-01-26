@@ -1,8 +1,10 @@
 package TestCases;
 
 import Data.Data;
+import Locators.CheckoutStepTwoPageLocators;
 import Pages.CheckoutPage;
 import Pages.LoginPage;
+import Pages.OverviewPage;
 import Utils.Constants;
 import org.testng.Assert;
 import org.testng.annotations.*;
@@ -36,6 +38,11 @@ public class TestLogin extends BaseTest {
         driver.get("https://www.saucedemo.com/checkout-step-one.html");
         CheckoutPage checkoutPage = new CheckoutPage(driver);
         checkoutPage.checkout(Data.defaultInfo());
-    }
 
+        OverviewPage overviewPage = new OverviewPage(driver);
+        String Product1_Quantity = overviewPage.GetProductInfo(CheckoutStepTwoPageLocators.label_product_quantity(1));
+        String Product1_Name = overviewPage.GetProductInfo(CheckoutStepTwoPageLocators.label_product_name(1));
+        String Product1_Desc = overviewPage.GetProductInfo(CheckoutStepTwoPageLocators.label_product_desc(1));
+        String Product1_Price = overviewPage.GetProductInfo(CheckoutStepTwoPageLocators.label_product_price(1));
+    }
 }
